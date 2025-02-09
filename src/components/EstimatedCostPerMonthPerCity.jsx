@@ -9,33 +9,38 @@ import Data2024 from "../Data2024.js";
 const fireIncidents2023 = Data2023.fireIncidents2023;
 const fireIncidents2024 = Data2024.fireIncidents2024;
 
+const highestDamgeCost = functions.getHighestDamageIncident;
+
 const generateDataSetsCombined = functions.generateDataSetsCombined;
-const fireIncidentPerMonthsPerCity = functions.fireIncidentPerMonthsPerCity;
+const estimatedCostOfDamagePerCityPerMonth =
+  functions.estimatedDamgeCostPerMonthPerCity;
 
 const CITIES = Data.CITIES;
 
-function PerCItyPerMonth() {
+function EstimatedCostPerMonthPerCity() {
   const [selectedCity, setSelectedCity] = useState("NCR");
 
-  const fireIncidentsPerMonthPerCities2023 = useMemo(
-    () => fireIncidentPerMonthsPerCity(fireIncidents2023, selectedCity),
+  const estimatedCostOfDamagePerCityPerMonth2023 = useMemo(
+    () => estimatedCostOfDamagePerCityPerMonth(fireIncidents2023, selectedCity),
     [fireIncidents2023, selectedCity]
   );
 
-  const fireIncidentsPerMonthPerCities2024 = useMemo(
-    () => fireIncidentPerMonthsPerCity(fireIncidents2024, selectedCity),
+  const estimatedCostOfDamagePerCityPerMonth2024 = useMemo(
+    () => estimatedCostOfDamagePerCityPerMonth(fireIncidents2024, selectedCity),
     [fireIncidents2024, selectedCity]
   );
-  const labels = fireIncidentsPerMonthPerCities2023.map((data) => data.month);
+  const labels = estimatedCostOfDamagePerCityPerMonth2023.map(
+    (data) => data.month
+  );
 
   const title2023 = "2023";
-  const data2023 = fireIncidentsPerMonthPerCities2023.map(
-    (data) => data.totalNumberOfFireIncidents
+  const data2023 = estimatedCostOfDamagePerCityPerMonth2023.map(
+    (data) => data.totalEstimatedDamageCost
   );
 
   const title2024 = "2024";
-  const data2024 = fireIncidentsPerMonthPerCities2024.map(
-    (data) => data.totalNumberOfFireIncidents
+  const data2024 = estimatedCostOfDamagePerCityPerMonth2024.map(
+    (data) => data.totalEstimatedDamageCost
   );
 
   const fireData2023 = { title: title2023, data: data2023 };
@@ -63,10 +68,10 @@ function PerCItyPerMonth() {
       </select>
       <BarChart
         chartData={returnedDataSets}
-        chartTitle='Fire Incident Per Month Per City'
+        chartTitle='Estimated Damage Cost Per Month Per City'
       />
     </div>
   );
 }
 
-export default PerCItyPerMonth;
+export default EstimatedCostPerMonthPerCity;

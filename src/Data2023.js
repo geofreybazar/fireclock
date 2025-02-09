@@ -1,40 +1,4 @@
-const CITIES = [
-  "NCR",
-  "City_of_Manila",
-  "Caloocan_City",
-  "Malabon_City",
-  "Navotas_City",
-  "Valenzuela_City",
-  "Las_Piñas_City",
-  "Makati_City",
-  "Muntinlupa_City",
-  "Parañaque_City",
-  "Pasay_City",
-  "Mandaluyong_City",
-  "Marikina_City",
-  "Pasig_City",
-  "Pateros",
-  "Taguig_City",
-  "San_Juan_City",
-  "Quezon_City",
-];
-
-const MONTHS = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-
-const fireIncidents = [
+const fireIncidents2023 = [
   {
     id: "1",
     dateAndTimeOfFire: "2023-01-02T18:05:00",
@@ -56094,7 +56058,8 @@ const fireIncidents = [
     region: "NCR",
     provinceOrDistrict: "Fire_District_2",
     cityOrMunicipality: "Caloocan_City",
-    exactLocation: "1991 Petrunia Street, Area B, Brgy. 174, Camarin, Caloocan City",
+    exactLocation:
+      "1991 Petrunia Street, Area B, Brgy. 174, Camarin, Caloocan City",
     propertyTypeGeneralCategory: "NON_RESIDENTIAL",
     propertyTypeSubCategory: "MERCANTILE",
     nameOfEstablishment: "Angels Burger",
@@ -60432,7 +60397,5 @@ const fireIncidents = [
 ];
 
 export default {
-  fireIncidents,
-  MONTHS,
-  CITIES,
+  fireIncidents2023,
 };

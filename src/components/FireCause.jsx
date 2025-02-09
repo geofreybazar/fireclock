@@ -2,42 +2,59 @@ import { useMemo } from "react";
 import functions from "../functions/functions";
 import Data from "../Data";
 
-const fireIncidents = Data.fireIncidents;
+import PieChart from "./PieChart";
+import Data2023 from "../Data2023";
+import Data2024 from "../Data2024";
+
+const fireIncidents2023 = Data2023.fireIncidents2023;
+const fireIncidents2024 = Data2024.fireIncidents2024;
+
 const getFireCauses = functions.getFireCauses;
 
 function FireCause() {
-  const fireIncidentsPerCity = useMemo(
-    () => getFireCauses(fireIncidents),
-    [fireIncidents]
+  const fireIncidentsPerCity2023 = useMemo(
+    () => getFireCauses(fireIncidents2023),
+    [fireIncidents2023]
+  );
+
+  const fireIncidentsPerCity2024 = useMemo(
+    () => getFireCauses(fireIncidents2024),
+    [fireIncidents2024]
+  );
+
+  const causes2023 = fireIncidentsPerCity2023.map((item) => item.cause);
+  const causes2024 = fireIncidentsPerCity2024.map((item) => item.cause);
+
+  const numberOfFireIncidents2023 = fireIncidentsPerCity2023.map(
+    (item) => item.total
+  );
+  const numberOfFireIncidents2024 = fireIncidentsPerCity2024.map(
+    (item) => item.total
+  );
+
+  const dataSets2023 = functions.pieChartDataSet(
+    causes2023,
+    numberOfFireIncidents2023
+  );
+
+  const dataSets2024 = functions.pieChartDataSet(
+    causes2024,
+    numberOfFireIncidents2024
   );
 
   return (
-    <div className='w-full flex justify-center'>
-      <table className='border border-black'>
-        <thead>
-          <tr>
-            <th colSpan='2' className='font-semibold text-xl text-center'>
-              Top 5 Causes of Fire in National Capital Region
-            </th>
-          </tr>
-        </thead>
-        <thead>
-          <tr className='border border-black'>
-            <th className='border border-black p-2'>Cause</th>
-            <th className='border border-black p-2'>Total Cases</th>
-          </tr>
-        </thead>
-        <tbody>
-          {fireIncidentsPerCity.map((cause, index) => (
-            <tr key={index} className='border border-black'>
-              <td className='border border-black p-2'>{cause.cause}</td>
-              <td className='border border-black p-2 text-center'>
-                {cause.total}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className='h-full flex flex-col items-center text-center gap-5'>
+      <p className='text-2xl font-semibold'>Top 5 Causes per fire Incident</p>
+      <div className='h-full flex justify-center '>
+        <div className='w-[600px] h-[600px]'>
+          <p className='text-2xl font-semibold'>2023 </p>
+          <PieChart data={dataSets2023} />
+        </div>
+        <div className='w-[600px] h-[600px]'>
+          <p className='text-2xl font-semibold'>2024</p>
+          <PieChart data={dataSets2024} />
+        </div>
+      </div>
     </div>
   );
 }

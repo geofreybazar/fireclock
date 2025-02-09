@@ -1,13 +1,18 @@
 import { Bar } from "react-chartjs-2";
 
-function BarChart({ chartData, tooltip }) {
+function BarChart({ chartData, chartTitle }) {
+  const options = {
+    plugins: {
+      title: {
+        display: true,
+        text: chartTitle,
+      },
+    },
+  };
+
   return (
     <div>
-      {!tooltip ? (
-        <Bar data={chartData} />
-      ) : (
-        <Bar data={chartData} options={tooltip} />
-      )}
+      <Bar data={chartData} options={options} />
     </div>
   );
 }

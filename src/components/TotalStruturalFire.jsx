@@ -1,16 +1,38 @@
+import Data2023 from "../Data2023";
+import Data2024 from "../Data2024";
 import functions from "../functions/functions";
 
-const totalNumberStruturalFire = functions.getTotalStruturalFire();
+const totalNumberStruturalFire2023 = functions.getTotalStruturalFire(
+  Data2023.fireIncidents2023
+);
+const totalNumberStruturalFire2024 = functions.getTotalStruturalFire(
+  Data2024.fireIncidents2024
+);
 
 function TotalStruturalFire() {
   return (
-    <div className='border border-black p-5'>
-      <h1 className='text-2xl font-semibold text-center'>
-        Total Number of Structural Fire Incidents
-      </h1>
-      <h1 className='text-3xl font-semibold text-center text-red-500'>
-        {totalNumberStruturalFire}
-      </h1>
+    <div className='w-full flex justify-center text-center'>
+      <table className='border border-1 border-black'>
+        <thead className='border border-1 border-black text-2xl'>
+          <tr>
+            <th colSpan='2' className='p-5'>
+              Total Number of Structural Fire Incidents
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr className='border border-1 border-black text-xl'>
+            <td className='border border-1 border-black'>2023</td>
+            <td>2024</td>
+          </tr>
+          <tr className='text-2xl text-red-600 font-semibold'>
+            <td className='border border-1 border-black'>
+              {totalNumberStruturalFire2023}
+            </td>
+            <td>{totalNumberStruturalFire2024}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 }
