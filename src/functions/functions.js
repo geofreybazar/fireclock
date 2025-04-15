@@ -194,6 +194,7 @@ function getTotalStruturalFire(fireIncidents) {
 
 function getFireIncidentsPerOccupancyType(fireIncidents) {
   const fireIncidentsPerOccupanyType = [];
+
   const structuralFire = fireIncidents.filter(
     (item) => item.propertyTypeGeneralCategory !== "TRANSPORT"
   );
@@ -201,6 +202,7 @@ function getFireIncidentsPerOccupancyType(fireIncidents) {
   const occupancyType = structuralFire.map(
     (item) => item.propertyTypeSubCategory
   );
+
   const uniqueOccupancyType = [...new Set(occupancyType)];
 
   uniqueOccupancyType.forEach((type) => {
