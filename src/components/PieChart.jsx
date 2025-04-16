@@ -1,13 +1,9 @@
 import { Pie } from "react-chartjs-2";
 
-function PieChart({ data, title }) {
+function PieChart({ data }) {
   const options = {
-    plugins: {
-      title: {
-        display: true,
-        text: title,
-      },
-    },
+    responsive: true,
+    maintainAspectRatio: false,
   };
 
   return <Pie data={data} options={options} />;

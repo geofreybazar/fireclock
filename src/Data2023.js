@@ -46888,7 +46888,7 @@ const fireIncidents2023 = [
     alarm: "FIRE OUT UPON ARRIVAL",
     cause: "OTHER CAUSES OF FIRE INCIDENT",
     classificationOfCase: "ACCIDENTAL",
-    fireArsonInvestigator: "SFO1  Umnas              FO3 Batalla",
+    fireArsonInvestigator: "SFO1  Umnas FO3 Batalla",
   },
   {
     id: "1290",

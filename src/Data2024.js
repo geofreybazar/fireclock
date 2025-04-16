@@ -74266,4 +74266,4 @@ const fireIncidents2024 = [
   },
 ];
 
-export default {fireIncidents2024};
+export default { fireIncidents2024 };

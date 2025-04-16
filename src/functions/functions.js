@@ -27,9 +27,12 @@ function fireIncidentPerMonthsPerCity(fireIncidents, city) {
       totalNumberOfFireIncidents: 0,
     });
   });
+
   if (city === "NCR") {
     structuralFire.forEach((item) => {
       const monthIndex = new Date(item.dateAndTimeOfFire).getMonth();
+
+      console.log(monthIndex);
       const monthName = monthNames[monthIndex];
       const existingMonth = fireIncident.find(
         (entry) => entry.month === monthName
@@ -251,10 +254,11 @@ function getTopFiveOccupancyWithHighFatalities(fireIncident) {
     } else {
       occupancyWithHighFatalities.push({
         occupancyType: occupancyType,
-        fatalities: 1,
+        fatalities: Number(item.totalCivilianNumberOfFatalities),
       });
     }
   });
+
   const sortedFireOccupany = occupancyWithHighFatalities
     .toSorted(function (a, b) {
       return a.fatalities - b.fatalities;
@@ -283,10 +287,19 @@ function getTotalEstimatedCostOfDamage() {
   return totalEstimatedCostOfDamage;
 }
 
-const generateDataSetsCombined = (labels, fireData2023, fireData2024) => {
+const generateDataSetsCombined = (
+  labels,
+  fireData2023,
+  fireData2024,
+  fireData2020
+) => {
   const dataSets = {
     labels: labels,
     datasets: [
+      {
+        label: fireData2020.title,
+        data: fireData2020.data,
+      },
       {
         label: fireData2023.title,
         data: fireData2023.data,
