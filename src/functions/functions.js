@@ -32,7 +32,6 @@ function fireIncidentPerMonthsPerCity(fireIncidents, city) {
     structuralFire.forEach((item) => {
       const monthIndex = new Date(item.dateAndTimeOfFire).getMonth();
 
-      console.log(monthIndex);
       const monthName = monthNames[monthIndex];
       const existingMonth = fireIncident.find(
         (entry) => entry.month === monthName
@@ -282,8 +281,6 @@ function getTotalEstimatedCostOfDamage() {
     0
   );
 
-  const isNumber = typeof estimatedCostOfDamage;
-
   return totalEstimatedCostOfDamage;
 }
 
@@ -291,7 +288,9 @@ const generateDataSetsCombined = (
   labels,
   fireData2023,
   fireData2024,
-  fireData2020
+  fireData2020,
+  fireData2021,
+  fireData2022
 ) => {
   const dataSets = {
     labels: labels,
@@ -299,6 +298,14 @@ const generateDataSetsCombined = (
       {
         label: fireData2020.title,
         data: fireData2020.data,
+      },
+      {
+        label: fireData2021.title,
+        data: fireData2021.data,
+      },
+      {
+        label: fireData2022.title,
+        data: fireData2022.data,
       },
       {
         label: fireData2023.title,
@@ -319,6 +326,7 @@ function estimatedDamagePerCities(fireIncidents) {
   const structuralFire = fireIncidents.filter(
     (item) => item.propertyTypeGeneralCategory !== "TRANSPORT"
   );
+
   const estimatedDamgePerCity = [];
 
   const citiesWithOutNCR = cities.filter((city) => city !== "NCR");
@@ -331,7 +339,6 @@ function estimatedDamagePerCities(fireIncidents) {
 
   structuralFire.forEach((data) => {
     const city = data.cityOrMunicipality;
-
     const existingCity = estimatedDamgePerCity.find(
       (item) => item.city === city
     );
@@ -366,6 +373,7 @@ function estimatedDamgeCostPerMonthPerCity(fireIncidents, city) {
       totalEstimatedDamageCost: 0,
     });
   });
+
   if (city === "NCR") {
     structuralFire.forEach((item) => {
       const monthIndex = new Date(item.dateAndTimeOfFire).getMonth();
@@ -393,6 +401,7 @@ function estimatedDamgeCostPerMonthPerCity(fireIncidents, city) {
         Number(item.estimatedCostOfDamage.replace(/,/g, ""));
     });
   }
+
   return estimatedDamageCost;
 }
 
