@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="h-screen m-10 flex flex-col items-center gap-5">
       <p className="text-4xl font-semibold text-center p-5">
-        BFP-NCR Comparison Data for FY2023 vs FY2024
+        BFP-NCR Fire Incident Report FY2020-2024
       </p>
 
       <TotalStruturalFire />
