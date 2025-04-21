@@ -2,6 +2,7 @@ import Data2023 from "../Data2023";
 import Data2024 from "../Data2024";
 import Data2020 from "../Data2020";
 import Data2021 from "../Data2021";
+import Data2022 from "../Data2022";
 import functions from "../functions/functions";
 
 const totalNumberStruturalFire2020 = functions.getTotalStruturalFire(
@@ -9,6 +10,10 @@ const totalNumberStruturalFire2020 = functions.getTotalStruturalFire(
 );
 const totalNumberStruturalFire2021 = functions.getTotalStruturalFire(
   Data2021.fireIncidents2021
+);
+
+const totalNumberStruturalFire2022 = functions.getTotalStruturalFire(
+  Data2022.fireIncidents2022
 );
 const totalNumberStruturalFire2023 = functions.getTotalStruturalFire(
   Data2023.fireIncidents2023
@@ -23,7 +28,7 @@ function TotalStruturalFire() {
       <table className="border border-1 border-black">
         <thead className="border border-1 border-black text-2xl">
           <tr>
-            <th colSpan="4" className="p-5">
+            <th colSpan="5" className="p-5">
               Total Number of Structural Fire Incidents
             </th>
           </tr>
@@ -32,6 +37,7 @@ function TotalStruturalFire() {
           <tr className="border border-1 border-black text-xl">
             <td className="border border-1 border-black">2020</td>
             <td className="border border-1 border-black">2021</td>
+            <td className="border border-1 border-black">2022</td>
             <td className="border border-1 border-black">2023</td>
             <td>2024</td>
           </tr>
@@ -40,6 +46,7 @@ function TotalStruturalFire() {
               {totalNumberStruturalFire2020}
             </td>
             <td>{totalNumberStruturalFire2021}</td>
+            <td>{totalNumberStruturalFire2022}</td>
             <td className="border border-1 border-black">
               {totalNumberStruturalFire2023}
             </td>
