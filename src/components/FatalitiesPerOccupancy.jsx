@@ -97,7 +97,7 @@ function FatalitiesPerOccupancy() {
   return (
     <div className="h-full flex flex-col items-center text-center gap-5">
       <p className="text-2xl font-semibold">
-        Top 5 Occupancy Type per fire Incident
+        Top 5 Occupancy Type per fatalities
       </p>
       <div className="h-full flex flex-col gap-5 justify-center ">
         <div className="flex">
