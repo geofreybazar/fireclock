@@ -258,12 +258,16 @@ function getTopFiveOccupancyWithHighFatalities(fireIncident) {
     }
   });
 
-  const sortedFireOccupany = occupancyWithHighFatalities
+  const filtered = occupancyWithHighFatalities.filter(
+    (item) => item.fatalities > 0
+  );
+  const sortedFireOccupany = filtered
     .toSorted(function (a, b) {
       return a.fatalities - b.fatalities;
     })
     .reverse();
   const top5Causes = sortedFireOccupany.slice(0, 5);
+
   return top5Causes;
 }
 
