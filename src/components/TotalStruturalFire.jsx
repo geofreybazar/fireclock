@@ -45,7 +45,9 @@ function TotalStruturalFire() {
             <td className="border border-1 border-black">
               {totalNumberStruturalFire2020}
             </td>
-            <td>{totalNumberStruturalFire2021}</td>
+            <td className="border border-1 border-black">
+              {totalNumberStruturalFire2021}
+            </td>
             <td>{totalNumberStruturalFire2022}</td>
             <td className="border border-1 border-black">
               {totalNumberStruturalFire2023}
