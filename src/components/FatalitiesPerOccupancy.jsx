@@ -96,9 +96,7 @@ const dataSets2022 = functions.pieChartDataSet(
 function FatalitiesPerOccupancy() {
   return (
     <div className="h-full flex flex-col items-center text-center gap-5">
-      <p className="text-2xl font-semibold">
-        Top 5 Occupancy Type per fatalities
-      </p>
+      <p className="text-2xl font-semibold">Fatalities per Occupancy</p>
       <div className="h-full flex flex-col gap-5 justify-center ">
         <div className="flex">
           <div className="w-[500px] h-[500px] p-2 flex flex-col">

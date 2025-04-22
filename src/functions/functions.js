@@ -266,9 +266,9 @@ function getTopFiveOccupancyWithHighFatalities(fireIncident) {
       return a.fatalities - b.fatalities;
     })
     .reverse();
-  const top5Causes = sortedFireOccupany.slice(0, 5);
+  // const top5Causes = sortedFireOccupany.slice(0, 5);
 
-  return top5Causes;
+  return filtered;
 }
 
 function getTotalEstimatedCostOfDamage() {

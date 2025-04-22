@@ -48,7 +48,7 @@ function App() {
                 sx={{ whiteSpace: "normal", maxWidth: 150 }}
               />
               <Tab
-                label="Top 5 Occupancies Per Fatalities"
+                label="Fatalities per Occupancy"
                 value="3"
                 wrapped
                 sx={{ whiteSpace: "normal", maxWidth: 150 }}
