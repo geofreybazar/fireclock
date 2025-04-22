@@ -27016,7 +27016,7 @@ const fireIncidents2020 = [
     totalFirefighterNumberOfFatalities: "0",
     numberOfFatalitiesCivilianMale: "0",
     numberOfFatalitiesCivilianFemale: "1",
-    totalCivilianNumberOfFatalities: "0",
+    totalCivilianNumberOfFatalities: "1",
     estimatedCostOfDamage: "500000",
     numberOfAffectedStructure: "",
     alarm: "TF BRAVO",
