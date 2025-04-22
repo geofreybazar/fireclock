@@ -29157,7 +29157,7 @@ const fireIncidents2020 = [
     totalFirefighterNumberOfFatalities: "0",
     numberOfFatalitiesCivilianMale: "0",
     numberOfFatalitiesCivilianFemale: "0",
-    totalCivilianNumberOfFatalities: "14",
+    totalCivilianNumberOfFatalities: "0", //deleted 14
     estimatedCostOfDamage: "500000",
     numberOfAffectedStructure: "",
     alarm: "",
