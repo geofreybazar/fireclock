@@ -92,9 +92,7 @@ function FireCause() {
 
   return (
     <div className="h-full flex flex-col items-center text-center gap-5">
-      <p className="text-2xl font-semibold">
-        Top 5 Occupancy Type per fire Incident
-      </p>
+      <p className="text-2xl font-semibold">Top 5 Causes Per Fire Incident</p>
       <div className="h-full flex flex-col gap-5 justify-center ">
         <div className="flex">
           <div className="w-[500px] h-[500px] p-2 flex flex-col">
